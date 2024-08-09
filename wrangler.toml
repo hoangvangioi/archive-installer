@@ -1,0 +1,18 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "dotfiles"
+main = "src/index.js"
+compatibility_date = "2024-08-06"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+GITHUB_USER = ""
+GITHUB_REPO = ""
+GITHUB_BRANCH = "main"
+AUTH_KEY_SECRET = ""
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "dotfiles"
+
+[triggers]
+crons = ["*/1 * * * *"]
